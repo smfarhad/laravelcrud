@@ -12,5 +12,22 @@
 */
 
 Route::get('/', function () {
+    return realpath(base_path('resources/views'));
     return view('welcome');
 });
+Route::get('users', ['uses'=>'UsersController@index']);
+
+//Route::get('users', function () {
+//    $users = [
+//            0=> ['first_name'=>'SM Farhad',
+//                 'last_name'=>'Hossain',
+//                 'location'=>'Bangladesh'],
+//            1=> ['first_name'=>'Donald J',
+//                 'last_name'=>'Trump',
+//                 'location'=>'USA'],
+//            2=> ['first_name'=>'Angela',
+//                 'last_name'=>'Merkel',
+//                 'location'=>'Germany']
+//    ];
+//    return $users;
+//});
