@@ -10,10 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return realpath(base_path('resources/views'));
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index');
+Route::get('profile', 'PagesController@profile');
+Route::get('settings', 'PagesController@settings');
+//Route::get('/', function () {
+//    return realpath(base_path('resources/views'));
+//    return view('welcome');
+//});
 Route::get('users', ['uses'=>'UsersController@index']);
 Route::get('users/create', ['uses'=>'UsersController@create']);
 Route::post('users', ['uses' => 'UsersController@store']);

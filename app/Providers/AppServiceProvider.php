@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use View;
+use Auth;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $age = Carbon::createFromDate('1987',2,14)->age;      
+        View::share('age', $age);
+        View::share('myname', 'SM Farhad Hossain');
+        View::composer('*', function($view){
+            $view->with('auth', Auth::user());
+        });
     }
 
     /**
