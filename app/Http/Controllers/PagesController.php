@@ -27,6 +27,12 @@ class PagesController extends Controller
     
     public function settings() {
         return view('pages.settings');
+    } 
+    public function blade() {
+        $gender = 'male';
+        $text = 'Hello There';
+        return view('blade.bladetest', compact('gender', 'text'));
     }    
+        
     
 }

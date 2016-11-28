@@ -11,7 +11,6 @@
                     <h1>Hello, {{$myname}} </h1>
                     <h3>Hello, {{$age}} </h3>
                     <h3>{{$auth->name}} </h3>
-                    {{$married}}
                      You are login in {!! Auth::user()->email !!}!
                 </div>
             </div>

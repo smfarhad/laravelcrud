@@ -9,17 +9,9 @@ use App\User;
 class UsersController extends Controller {
 
     public function index() {
-        $users = [
-            0 => ['first_name' => 'SM Farhad',
-                'last_name' => 'Hossain',
-                'location' => 'Bangladesh'],
-            1 => ['first_name' => 'Donald J',
-                'last_name' => 'Trump',
-                'location' => 'USA'],
-            2 => ['first_name' => 'Angela',
-                'last_name' => 'Merkel',
-                'location' => 'Germany']
-        ];
+        $users = User::paginate(10);
+        //$users = User::simplepaginate(10);
+        //return $users;
         return view('admin.users.index', compact('users'));
     }
 

@@ -6,6 +6,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Profile</div>
                 <div class="panel-body">
+                    <p> Your age is @age([1989, 11, 27])</p>
+                    <p> @sayHello('SM Farhad Hossain')</p>
                     <p>{{$married}}</p>
                     <p>{{$test}}</p>
                     <p>{{$age}}</p>
